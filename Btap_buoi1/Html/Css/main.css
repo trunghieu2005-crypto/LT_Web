@@ -1,0 +1,150 @@
+#container {
+  width: 960px;
+  margin: auto;
+}
+#header .logo {
+  float: left;
+  width: 200px;
+  margin: auto;
+}
+#header .nav {
+  width: 760px;
+  margin: auto;
+  float: left;
+  padding-top: 50px;
+}
+#header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+#header .nav ul li {
+  float: left;
+}
+.nav ul li a {
+  padding: 0 20px 5px 20px;
+  text-decoration: none;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 20px;
+  color: #889297;
+}
+.nav ul li a:hover {
+  color: #d23434;
+  border-bottom: 3px solid #d23434;
+}
+.nav ul li a.active {
+  color: #03f;
+  border-bottom: 3px solid #03f;
+}
+#slider {
+  width: 940px;
+  margin: 10px 10px;
+}
+.clear {
+  clear: both;
+}
+#aside {
+  width: 220px;
+  float: left;
+  margin: 10px;
+}
+#aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#aside h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  color: #596267;
+  border-bottom: 3px solid #596267;
+}
+#aside ul li a {
+  color: #596267;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-bottom: 1px solid #dce1e3;
+  display: block;
+  line-height: 40px;
+}
+div#gNav ul {
+  background: url(../images/bg_gnav.gif) repeat-x;
+  border: 1px solid #000;
+  height: 22px;
+  padding: 12px 0;
+}
+#content {
+  width: 720px;
+  float: left;
+}
+.mau_thiet_ke_moi {
+  width: 720px;
+  padding-top: 62px;
+}
+.San_pham {
+  width: 220px;
+  float: left;
+  margin: 0 10px;
+}
+.San_pham h3 {
+  color: #303131;
+  font-size: 15px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.San_pham p {
+  color: #787a7b;
+  font-size: 12px;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 24px;
+}
+.Noi_that_cao_cap {
+  width: 720px;
+  padding-top: 42px;
+}
+.Sp_cao_cap {
+  width: 220px;
+  float: left;
+  margin: 10px;
+}
+.Sp_cao_cap h3 {
+  color: #d23434;
+  font-size: 15px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.Sp_cao_cap p {
+  color: #787a7b;
+  font-size: 12px;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 24px;
+}
+.Sp_cao_cap a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #d23434;
+  padding: 0 15px;
+  float: right;
+  line-height: 30px;
+}
+#footer {
+  width: 940px;
+  height: 100px;
+  background-color: #333637;
+  margin: 10px;
+}
+.dia_chi {
+  width: 700px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Tahoma, Geneva, sans-serif;
+  float: left;
+}
+
+.icon {
+  width: 60px;
+  margin: 0 10px;
+  float: left;
+  padding-top: 20px;
+}
