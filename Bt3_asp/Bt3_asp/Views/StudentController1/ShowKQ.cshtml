@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Kết quả đăng ký ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ShowKQ</h1>
+<h2>Kết quả đăng ký</h2>
+
+<p>Cảm ơn bạn <b>@ViewBag.MSSV</b> - <b>@ViewBag.HoTen</b> đã đăng ký chuyên ngành <b>@ViewBag.ChuyenNganh</b>.</p>
+<p>Số lượng sinh viên đã đăng ký cùng ngành với bạn: <b>@ViewBag.SameMajorCount</b>.</p>
+
+<a asp-action="Index">Quay lại trang đăng ký</a>
