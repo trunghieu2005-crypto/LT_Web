@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model IEnumerable<_0671_NguyenTrungHieu.Models.TodoJob>
+
+    <h2 class="text-center">DANH SÁCH CÔNG VIỆC</h2>
+    <a asp-action="Create" class="btn btn-primary mb-3">Tạo mới công việc</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Mã công việc</th>
+                <th>Tên công việc</th>
+                <th>Trạng thái hoàn thành</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaCongViec</td>
+                    <td>@item.TenCongViec</td>
+                    <td>
+                        <input type="checkbox" @(item.HoanThanh ? "checked" : "") disabled />
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MaCongViec">Sửa</a> |
+                        <a asp-action="Details" asp-route-id="@item.MaCongViec">Chi tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.MaCongViec"
+                           onclick="return confirm('Bạn có chắc muốn xóa?')">Xoá</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model _0671_NguyenTrungHieu.Models.TodoJob
+
+    <h2>Chi tiết công việc</h2>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Mã: @Model.MaCongViec</h5>
+            <p class="card-text"><strong>Tên:</strong> @Model.TenCongViec</p>
+            <p class="card-text">
+                <strong>Trạng thái:</strong>
+                @(Model.HoanThanh ? "Đã xong" : "Chưa xong")
+            </p>
+            <a asp-action="Edit" asp-route-id="@Model.MaCongViec" class="btn btn-warning">Sửa</a>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+}
