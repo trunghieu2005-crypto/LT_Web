@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Bai5_NetCore.Models.Book>
+
+<div class="container mt-3">
+
+    <h2>Chủ đề</h2>
+
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <ul>
+                @foreach (var c in ViewBag.Categories)
+                {
+                    <li>
+                        @c.CategoryName (@c.BookCount)
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!-- Book list -->
+        <div class="col-md-9">
+
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Thêm mới</a>
+            </p>
+
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 mb-3">
+
+                        <div class="card text-center p-2">
+
+                            <h5>@item.Title</h5>
+
+                            <a asp-action="Edit" asp-route-id="@item.BookId" class="edit-link">
+                                Edit
+                            </a>
+
+
+                            <p>Tác giả: @item.Author</p>
+
+                            <p>Thể loại: @item.Category.CategoryName</p>
+
+                            <img src="~/Content/ImageBooks/@item.Image" width="120" />
+
+                            <div class="mt-2">
+
+                                <a asp-action="Details" asp-route-id="@item.BookId"
+                                   class="btn btn-secondary btn-sm">Chi tiết</a>
+
+                                <a asp-action="Delete" asp-route-id="@item.BookId"
+                                   class="btn btn-success btn-sm">Xóa</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

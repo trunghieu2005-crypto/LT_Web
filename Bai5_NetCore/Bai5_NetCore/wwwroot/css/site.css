@@ -1,0 +1,130 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* Book detail layout */
+.book-detail {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  align-items: flex-start;
+}
+.book-detail .book-img img {
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  padding: 8px;
+  background: #f9f9f9;
+}
+.book-detail .book-info {
+  flex: 1;
+}
+.book-detail h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.book-detail .rating {
+  color: #f4b400;
+  margin: 8px 0;
+}
+.book-detail .price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 12px 0;
+}
+.book-detail .price .new-price {
+  color: #e53935;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.book-detail .price .old-price {
+  color: #888;
+  text-decoration: line-through;
+}
+.book-detail .price .discount {
+  background: #e53935;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.book-detail .quantity-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+.book-detail .quantity-box input[type="text"] {
+  width: 48px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px;
+}
+.book-detail .quantity-box button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.book-detail .btn-box {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.book-detail .btn-cart {
+  background: #fff;
+  border: 1px solid #e53935;
+  color: #e53935;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+.book-detail .btn-buy {
+  background: #e53935;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .book-detail {
+    flex-direction: column;
+  }
+  .book-detail .book-img img {
+    width: 160px;
+  }
+}

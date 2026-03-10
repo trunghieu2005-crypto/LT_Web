@@ -1,0 +1,96 @@
+﻿@model Bai5_NetCore.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="book-detail">
+
+    <div class="book-img">
+        <img src="~/Content/ImageBooks/@Model.Image" />
+    </div>
+
+    <div class="book-info">
+
+        <h2>@Model.Title</h2>
+
+        <p>Nhà cung cấp: <b>NXB Trẻ</b></p>
+
+        <p>Tác giả: <b>@Model.Author</b></p>
+
+        <div class="rating">
+            ⭐⭐⭐⭐☆
+            <span>(79 đánh giá)</span>
+        </div>
+
+        <div class="price">
+
+            <span class="new-price">
+                @Model.Price.ToString("N0") đ
+            </span>
+
+            <span class="old-price">
+                100.000 đ
+            </span>
+
+            <span class="discount">
+                -23%
+            </span>
+
+        </div>
+
+        <p><b>Thời gian giao hàng :</b> Giao hàng đến</p>
+
+        <p><b>Chính sách đổi trả :</b> Đổi trả sản phẩm trong 30 ngày</p>
+
+        <h4>Mô tả:</h4>
+
+        <div class="quantity-box">
+
+            <span>Số lượng:</span>
+
+            <button type="button" onclick="minus()">-</button>
+
+            <input id="qty" type="text" value="1">
+
+            <button type="button" onclick="plus()">+</button>
+
+        </div>
+
+        <div class="btn-box">
+
+            <button class="btn-cart">
+                🛒 Thêm vào giỏ hàng
+            </button>
+
+            <button class="btn-buy">
+                Mua ngay
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                Quay lại
+            </a>
+
+        </div>
+
+        <br>
+
+        <p>@Model.Description</p>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        function plus() {
+            var el = document.getElementById('qty');
+            var v = parseInt(el.value) || 0;
+            el.value = v + 1;
+        }
+        function minus() {
+            var el = document.getElementById('qty');
+            var v = parseInt(el.value) || 0;
+            if (v > 1) el.value = v - 1;
+        }
+    </script>
+}
