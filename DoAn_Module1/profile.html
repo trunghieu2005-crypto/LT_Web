@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hồ Sơ Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BoardGames<span> ARENA</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <span class="user-name"> Chào, User123!</span>
+            
+        </nav>
+    </header>
+
+    <main class="profile-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lucky" alt="Avatar" class="avatar">
+                <h2>User123</h2>
+                <div class="input-describe">
+                    <input type="text" id="describe" placeholder="Nhập tiểu sử của bạn...">
+                </div>
+                <div class="user-stats">
+                    <div class="stat-item"><span>Trận:</span> <strong>42</strong></div>
+                    <div class="stat-item"><span>Tỉ lệ thắng:</span> <strong style="color: var(--neon-cyan);">65%</strong></div>
+                </div>
+                <button class="btn-edit">Chỉnh sửa hồ sơ</button>
+            </div>
+        </aside>
+
+        <section class="match-history">
+            <h3>LỊCH SỬ TRẬN ĐẤU</h3>
+            
+            <div class="match-card win">
+                <div class="game-name">CỜ CARO</div>
+                <div class="match-result">THẮNG</div>
+                <div class="match-info">
+                    <span class="opponent">vs Đối thủ A</span>
+                    <span class="match-date">15:30 - 20/02/2026</span>
+                </div>
+            </div>
+
+            <div class="match-card loss">
+                <div class="game-name">TIC TAC TOE</div>
+                <div class="match-result">THUA</div>
+                <div class="match-info">
+                    <span class="opponent">vs Đối thủ B</span>
+                    <span class="match-date">14:20 - 20/02/2026</span>
+                </div>
+            </div>
+            
+            </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

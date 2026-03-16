@@ -1,0 +1,111 @@
+/* Khai báo bảng màu Neon và Dark Mode */
+:root {
+    --bg-color: #050801;
+    --card-color: #1f2833;
+    --neon-cyan: #66fcf1;
+    --neon-green: #45a29e;
+    --text-white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Thanh Menu (Navbar) - Luôn dính ở trên cùng */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--card-color); 
+    border-bottom: 2px solid var(--neon-cyan);
+    box-shadow: 0 5px 20px rgba(102, 252, 241, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Tinh chỉnh thêm cho logo phát sáng cùng tông */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-cyan); /* Logo phát sáng */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--neon-cyan);
+}
+
+.btn-login-nav {
+    background: var(--neon-green);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-login-nav:hover {
+    background: var(--neon-cyan);
+    color: black;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.btn-profile-nav {
+    background: var(--neon-green);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-profile-nav:hover {
+    background: var(--neon-cyan);
+    color: black;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* Nút Đăng xuất - Thường dùng màu đỏ hoặc viền trắng để phân biệt với nút Đăng nhập */
+.btn-logout-nav {
+    background: transparent;
+    border: 1px solid #ff4d4d; /* Màu đỏ cảnh báo */
+    color: #ff4d4d;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-logout-nav:hover {
+    background: #ff4d4d;
+    color: white;
+    box-shadow: 0 0 10px #ff4d4d;
+}
+
+.btn-game:hover{
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}

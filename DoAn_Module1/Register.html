@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <form id="register-form" onsubmit="event.preventDefault(); handleRegister(document.getElementById('username').value, document.getElementById('password').value)">
+                <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+                <p>Nhập thông tin để tạo tài khoản mới</p>
+
+                <div class="input-group">
+                    <input type="text" id="username" required placeholder=" ">
+                    <label>Tên đăng nhập</label>
+                </div>
+
+                <!-- <div class="input-group">
+                    <input type="email" id="email" required placeholder=" ">
+                    <label>Email</label>
+                </div> -->
+
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder=" ">
+                    <label>Mật khẩu</label>
+                </div>
+
+                <button type="submit" class="btn-neon">ĐĂNG KÝ</button>
+
+                <div class="auth-footer">
+                    Đã có tài khoản? <a href="auth.html">Đăng nhập ngay</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

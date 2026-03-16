@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập - BoardGames-Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <form id="login-form" onsubmit="event.preventDefault(); handleLogin(document.getElementById('username').value, document.getElementById('password').value)">
+                <h2>ĐĂNG NHẬP</h2>
+                <p>Đăng nhập để lưu lại chiến tích của bạn</p>
+
+                <div class="input-group">
+                    <input type="text" id="username" required placeholder=" ">
+                    <label>Tên đăng nhập</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder=" ">
+                    <label>Mật khẩu</label>
+                </div>
+
+                <button type="submit" class="btn-neon">VÀO GAME</button>
+
+                <div class="auth-footer">
+                    Chưa có tài khoản? <a href="Register.html">Đăng ký ngay</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

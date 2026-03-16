@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BoardGames-Arena | Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">BoardGames<span> ARENA</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <button id="btn-login-nav" class="btn-login-nav" onclick="location.href='auth.html'">ĐĂNG NHẬP</button>
+            <button class="btn-profile-nav" onclick="location.href='profile.html'">HỒ SƠ</button>
+            <span id="user-greeting">Chào khách!</span>
+            <button id="btn-logout-nav" class="btn-logout-nav" onclick="handleLogout()">ĐĂNG XUẤT</button>
+        </nav>
+
+    </header>
+
+    <main style="padding: 40px 5%;">
+        <h2 style="margin-bottom: 30px; border-left: 5px solid var(--neon-cyan); padding-left: 15px;">TRÒ CHƠI PHỔ BIẾN
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px;">
+
+            <div
+                style="background: var(--card-color); border-radius: 10px; overflow: hidden; border: 1px solid #45a29e; transition: 0.3s;">
+                <img src="img\choi-co-caro-luon-thang_1_.webp" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0;">Cờ Caro</h3>
+                    <button class="btn-game"
+                        style="width: 100%; padding: 10px; background: var(--neon-cyan); border: none; font-weight: bold; cursor: pointer;">CHƠI
+                        NGAY</button>
+                </div>
+            </div>
+
+            <div
+                style="background: var(--card-color); border-radius: 10px; overflow: hidden; border: 1px solid #45a29e; transition: 0.3s;">
+                <img src="img\choi-co-caro-luon-thang_1_.webp" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0;">Cờ Caro</h3>
+                    <button class="btn-game"
+                        style="width: 100%; padding: 10px; background: var(--neon-cyan); border: none; font-weight: bold; cursor: pointer;">CHƠI
+                        NGAY</button>
+                </div>
+            </div>
+
+            <div
+                style="background: var(--card-color); border-radius: 10px; overflow: hidden; border: 1px solid #45a29e; transition: 0.3s;">
+                <img src="img\choi-co-caro-luon-thang_1_.webp" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0;">Cờ Caro</h3>
+                    <button class="btn-game"
+                        style="width: 100%; padding: 10px; background: var(--neon-cyan); border: none; font-weight: bold; cursor: pointer;">CHƠI
+                        NGAY</button>
+                </div>
+            </div>
+
+            <div
+                style="background: var(--card-color); border-radius: 10px; overflow: hidden; border: 1px solid #45a29e; transition: 0.3s;">
+                <img src="img\choi-co-caro-luon-thang_1_.webp" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0;">Cờ Caro</h3>
+                    <button class="btn-game"
+                        style="width: 100%; padding: 10px; background: var(--neon-cyan); border: none; font-weight: bold; cursor: pointer;">CHƠI
+                        NGAY</button>
+                </div>
+            </div>
+
+            <div
+                style="background: var(--card-color); border-radius: 10px; overflow: hidden; border: 1px solid #45a29e; transition: 0.3s;">
+                <img src="img\choi-co-caro-luon-thang_1_.webp" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px; text-align: center;">
+                    <h3 style="margin: 0 0 10px 0;">Cờ Caro</h3>
+                    <button class="btn-game"
+                        style="width: 100%; padding: 10px; background: var(--neon-cyan); border: none; font-weight: bold; cursor: pointer;">CHƠI
+                        NGAY</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        window.onload = function () {
+            const username = localStorage.getItem('username');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            const greeting = document.getElementById('user-greeting');
+            const loginBtn = document.getElementById('btn-login-nav');
+            const logoutBtn = document.getElementById('btn-logout-nav');
+
+            if (isLoggedIn === 'true' && username) {
+                // ĐÃ ĐĂNG NHẬP: Hiện tên + Hiện nút Logout + Ẩn nút Login
+                greeting.innerText = "Chào hiệp sĩ, " + username + "!";
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (logoutBtn) logoutBtn.style.display = 'inline-block';
+            } else {
+                // LÀ KHÁCH: Hiện nút Login + Ẩn nút Logout
+                greeting.innerText = "Chào khách!";
+                if (loginBtn) loginBtn.style.display = 'inline-block';
+                if (logoutBtn) logoutBtn.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

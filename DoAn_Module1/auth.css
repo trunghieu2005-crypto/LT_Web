@@ -1,0 +1,98 @@
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1f2833 0%, #0b0c10 100%);
+}
+
+
+.auth-card {
+    background: #1f2833; /* Màu xám than đặc, không cần trong suốt */
+    padding: 50px 40px;
+    border-radius: 10px; /* Bo góc vuông vức hơn một chút cho nam tính */
+    border: 2px solid var(--neon-cyan); /* Viền Neon rõ rệt */
+    width: 380px;
+    text-align: center;
+    /* Hiệu ứng đổ bóng phát sáng (Glow Effect) thay cho làm mờ */
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.2); 
+}
+
+.auth-card h2 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan); /* Chữ cũng phát sáng nhẹ */
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* Hiệu ứng Input bay bổng */
+.input-group {
+    position: relative;
+    margin-top: 35px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Khi có dữ liệu hoặc focus, chữ label sẽ bay lên */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--neon-cyan);
+    font-size: 12px;
+}
+
+.input-group input:focus {
+    border-bottom: 1px solid var(--neon-cyan);
+}
+
+.btn-neon {
+    margin-top: 40px;
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+    letter-spacing: 2px;
+}
+
+.btn-neon:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.auth-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-footer a {
+    color: var(--neon-cyan); /*Đổ bóng cho nút Play*/
+    text-decoration: none;
+}
