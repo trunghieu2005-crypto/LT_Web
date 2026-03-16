@@ -1,8 +1,8 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using Bai6_DATM.Models
+@using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {

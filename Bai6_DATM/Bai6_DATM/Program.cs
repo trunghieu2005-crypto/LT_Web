@@ -13,10 +13,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddDefaultTokenProviders()
-    .AddDefaultUI()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+    options.SignIn.RequireConfirmedAccount = false;
+})
+.AddDefaultTokenProviders()
+.AddDefaultUI()
+.AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddRazorPages();
 
@@ -49,6 +53,51 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Product}/{action=Index}/{id?}")
     .WithStaticAssets();
+
+
+// seed roles and admin user
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+
+    string[] roles = new[] { "Admin", "Member" };
+    foreach (var role in roles)
+    {
+        var exists = await roleManager.RoleExistsAsync(role);
+        if (!exists)
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+
+    // create admin user if not exists
+    var adminEmail = builder.Configuration["AdminUser:Email"] ?? "admin@example.com";
+    var admin = await userManager.FindByEmailAsync(adminEmail);
+    if (admin == null)
+    {
+        admin = new ApplicationUser { UserName = "admin", Email = adminEmail, EmailConfirmed = true, FullName = "Administrator" };
+        var result = await userManager.CreateAsync(admin, builder.Configuration["AdminUser:Password"] ?? "Admin@123");
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
+
+    // create example member
+    var memberEmail = builder.Configuration["MemberUser:Email"] ?? "member@example.com";
+    var member = await userManager.FindByEmailAsync(memberEmail);
+    if (member == null)
+    {
+        member = new ApplicationUser { UserName = "member", Email = memberEmail, EmailConfirmed = true, FullName = "Member User" };
+        var result = await userManager.CreateAsync(member, builder.Configuration["MemberUser:Password"] ?? "Member@123");
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(member, "Member");
+        }
+    }
+}
 
 
 app.Run();

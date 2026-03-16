@@ -1,0 +1,28 @@
+@model IEnumerable<Bai6_DATM.Models.Product>
+
+<h1>Quản lý sản phẩm (Admin)</h1>
+<a asp-action="Create">Thêm mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Danh mục</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Category?.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.Id">Sửa</a> |
+                    <a asp-action="Delete" asp-route-id="@p.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
