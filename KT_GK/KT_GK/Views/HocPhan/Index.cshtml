@@ -1,0 +1,27 @@
+﻿@model IEnumerable<KT_GK.Models.HocPhan>
+
+<h2 class="text-primary mt-3">DANH SÁCH HỌC PHẦN</h2>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã HP</th>
+            <th>Tên Học Phần</th>
+            <th>Số Tín Chỉ</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHP</td>
+                <td>@item.TenHP</td>
+                <td>@item.SoTinChi</td>
+                <td>
+                    <a asp-action="ChonHocPhan" asp-route-id="@item.MaHP" class="btn btn-success btn-sm">Chọn</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

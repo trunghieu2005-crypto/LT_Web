@@ -1,0 +1,60 @@
+﻿@model KT_GK.Models.SinhVien
+
+@{
+    ViewData["Title"] = "Thêm mới Sinh viên";
+}
+
+<h1 class="text-success">Thêm mới Sinh viên</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="MaSV" class="control-label font-weight-bold">Mã Sinh Viên</label>
+                <input asp-for="MaSV" class="form-control" placeholder="Nhập mã SV..." />
+                <span asp-validation-for="MaSV" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="control-label font-weight-bold">Họ Tên</label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="GioiTinh" class="control-label font-weight-bold">Giới Tính</label>
+                <select asp-for="GioiTinh" class="form-control">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NgaySinh" class="control-label font-weight-bold">Ngày Sinh</label>
+                <input asp-for="NgaySinh" type="date" class="form-control" />
+                <span asp-validation-for="NgaySinh" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label font-weight-bold">Chọn Hình Ảnh</label>
+                <input type="file" name="fileUpload" class="form-control" accept="image/*" />
+                <span asp-validation-for="Hinh" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="MaNganh" class="control-label">Ngành Học</label>
+                <select asp-for="MaNganh" class="form-control" asp-items="ViewBag.MaNganh">
+                    <option value="">-- Chọn ngành --</option>
+                </select>
+                <span asp-validation-for="MaNganh" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Lưu thông tin" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

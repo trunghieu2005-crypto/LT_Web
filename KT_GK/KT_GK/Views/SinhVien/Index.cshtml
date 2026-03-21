@@ -1,0 +1,53 @@
+﻿@model IEnumerable<KT_GK.Models.SinhVien>
+
+@{
+    ViewData["Title"] = "Danh sách Sinh viên";
+}
+
+<h1 class="text-primary mt-3">Danh sách Sinh viên</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Thêm Sinh viên mới</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã SV</th>
+                <th>Họ Tên</th>
+                <th>Giới Tính</th>
+                <th>Ngày Sinh</th>
+                <th>Hình Ảnh</th>
+                <th>Ngành Học</th>
+                <th style="width: 200px;">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaSV</td>
+                    <td>@item.HoTen</td>
+                    <td>@item.GioiTinh</td>
+                    <td>@item.NgaySinh.ToString("dd/MM/yyyy")</td>
+                    <td class="text-center">
+                        @if (!string.IsNullOrEmpty(item.Hinh))
+                        {
+                            <img src="@item.Hinh" alt="Hinh" style="width: 80px; height: 100px; object-fit: cover;" class="img-thumbnail" />
+                        }
+                        else
+                        {
+                            <span class="text-muted italic">Không có ảnh</span>
+                        }
+                    </td>
+                    <td>@item.NganhHoc?.TenNganh</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MaSV" class="btn btn-sm btn-warning">Sửa</a> |
+                        <a asp-action="Details" asp-route-id="@item.MaSV" class="btn btn-sm btn-info text-white">Chi tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.MaSV" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

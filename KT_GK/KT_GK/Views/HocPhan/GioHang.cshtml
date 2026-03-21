@@ -1,0 +1,46 @@
+﻿@model IEnumerable<KT_GK.Models.HocPhan>
+
+@{
+    ViewData["Title"] = "Thông tin học phần đã chọn";
+}
+
+<h2 class="text-success mt-3">THÔNG TIN HỌC PHẦN ĐÃ CHỌN</h2>
+
+<table class="table table-bordered table-striped mt-4">
+    <thead class="table-info">
+        <tr>
+            <th>Mã HP</th>
+            <th>Tên Học Phần</th>
+            <th>Số Tín Chỉ</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHP</td>
+                <td>@item.TenHP</td>
+                <td>@item.SoTinChi</td>
+                <td class="text-center">
+                    <a asp-action="XoaHocPhan" asp-route-id="@item.MaHP"
+                       class="text-danger" onclick="return confirm('Bạn có muốn xóa môn này?')">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="font-weight-bold">
+            <td colspan="2" class="text-right">Tổng số tín chỉ:</td>
+            <td colspan="2" class="text-primary">@Model.Sum(x => x.SoTinChi)</td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Tiếp tục chọn môn</a>
+    
+    <form asp-action="XacNhanDangKy" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-primary">Xác nhận đăng ký</button>
+    </form>
+</div>
