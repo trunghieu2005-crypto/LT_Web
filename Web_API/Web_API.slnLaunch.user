@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Web_API\\Web_API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WinformClient\\WinformClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

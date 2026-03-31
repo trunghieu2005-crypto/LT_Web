@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Web_API/Web_API.csproj" />
+  <Project Path="WinformClient/WinformClient.csproj" Id="3568e191-2656-42f4-8ce7-f9737851ccef" />
+</Solution>
